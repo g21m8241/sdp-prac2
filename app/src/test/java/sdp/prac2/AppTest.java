@@ -5,17 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
 
-    // Method to remove the first character from every element in the list
-    public List<String> Task2(List<String> inputList) {
-        List<String> outputList = new ArrayList<>();
-        for (String element : inputList) {
-            if (!element.isEmpty()) {
-                outputList.add(element.substring(1));
-            }
-        }
-        return outputList;
-    }
-
     // Test Case 1: Empty List Test Case
     @Test
     void testEmptyList() {
