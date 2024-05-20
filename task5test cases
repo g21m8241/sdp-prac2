@@ -1,0 +1,44 @@
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class ListSortingTest {
+
+    @Test
+    public void testIsListSortedAscending() {
+        // Test case 1: Sorted list
+        List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5);
+        assertTrue(isListSortedAscending(sortedList));
+
+        // Test case 2: Empty list
+        List<Integer> emptyList = Arrays.asList();
+        assertTrue(isListSortedAscending(emptyList));
+    }
+
+    @Test
+    public void testIsListNotSortedAscending() {
+        // Test case 3: Unsorted list
+        List<Integer> unsortedList = Arrays.asList(5, 3, 2, 4, 1);
+        assertFalse(isListSortedAscending(unsortedList));
+
+        // Test case 4: Single element list
+        List<Integer> singleElementList = Arrays.asList(1);
+        assertTrue(isListSortedAscending(singleElementList));
+    }
+
+    private boolean isListSortedAscending(List<Integer> list) {
+        if (list == null || list.size() <= 1) {
+            return true;
+        }
+
+        for (int i = 0; i < list.size() - 1; i++) {
+            if (list.get(i) > list.get(i + 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
