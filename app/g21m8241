@@ -1,0 +1,20 @@
+public class Task4 {
+    public List<Integer> task4(List<Integer> a, List<Integer> b) {
+        // Check if the lists are of different sizes
+        if (a.size() != b.size()) {
+            return null;
+        }
+
+        // Create a result list to store the multiplied elements
+        List<Integer> result = new ArrayList<>();
+
+        // Iterate over the lists and multiply elements accordingly
+        int n = a.size();
+        for (int i = 0; i < n; i++) {
+            int product = a.get(i) * b.get(n - 1 - i); // Multiply corresponding elements
+            result.add(product); // Add the product to the result list
+        }
+
+        return result;
+    }
+}
